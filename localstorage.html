@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input type="text" id="Mydata"/><br/><br/>
+    <button type="button" onclick="SetData()">Set</button>
+    <button type="button" onclick="GetData()">Get</button>
+    <button type="button" onclick="ClearData()">Clear</button>
+    <script type="text/javascript">
+        function SetData() {
+            if (typeof (Storage) !== "UNDEFINED") {
+                localStorage.data = document.getElementById("Mydata").value;
+            }
+            else {
+                alert('plz upload ur bro');
+            }
+        }
+        function GetData() {
+            if (typeof (Storage) !== "UNDEFINED") {
+                document.getElementById("Mydata").value = localStorage.data;
+            }
+            else {
+                alert('plz upload ur bro');
+            }
+        }
+        function ClearData() {
+            if (typeof (Storage) !== "UNDEFINED") {
+                 localStorage.clear();
+            }
+            else {
+                alert('plz upload ur bro');
+            }
+        }
+    </script>
+</body>
+</html>

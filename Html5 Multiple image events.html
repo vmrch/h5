@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Drag event</title>
+    <style type="text/css">
+     div 
+     {
+         height:200px;
+         width:200px;
+         border:1px solid black;
+         margin-bottom:10px;
+         padding-left:15px;
+         padding-top:15px;
+     }
+     img 
+     {
+         height:180px;
+         width:180px;
+     }
+    </style>
+</head>
+<body>
+   <div id="div1" ondrop="div_ondrop(event)" ondragover="div_ondragover(event)">
+   </div>
+   <div id="div2" ondrop="div_ondrop(event)" ondragover="div_ondragover(event)">
+   </div>
+   <div id="div3" ondrop="div_ondrop(event)" ondragover="div_ondragover(event)">
+   </div>
+   <img draggable="true" ondragstart="img_ondragstart(event)" id="imgDemo1"
+   src="buid.jpeg" alt="Demo image" />
+   <img draggable="true" ondragstart="img_ondragstart(event)" id="imgDemo2"
+   src="chek.jpeg" alt="Demo image" />
+
+   <script type="text/javascript">
+
+      function img_ondragstart(event){
+          event.dataTransfer.setData("Test", event.target.id);
+          }
+
+          function div_ondrop(event) {
+              event.preventDefault();
+             var data= event.dataTransfer.getData("Test");
+              event.target.appendChild(document.getElementById(data));
+
+          }
+
+          function div_ondragover(event) { 
+               event.preventDefault();
+          }
+
+
+   
+   </script>
+ 
+</body>
+</html>

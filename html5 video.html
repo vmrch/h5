@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html  lang="en" xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta charset="utf-8"  />
+    <title>Untitled Page</title>
+</head>
+<body>
+   <div>
+       <button onclick="playOrPause()">Play/Pause</button>
+       <button onclick="Small()">Small</button>
+       <button onclick="Normal()">Normal</button>
+       <button onclick="Big()">Big</button>
+       <br />
+   </div>
+   <br />
+   <div>
+   <audio controls="controls">
+     <source src ="" type ="audio/mp3" />
+   </audio>
+   </div>
+   <video id ="MyVideo" controls="controls">
+       <source src="ram.mpeg4" type="audio/mpeg4"/>
+       <source src="ram.ogv" type="audio/ogg"/>
+       <source src="ram.mp4" type="audio/mp4"/>
+   </video>
+   <script type="text/javascript">
+       function playOrPause() {
+           var ref = document.getElementById("MyVideo");
+           if (ref.paused) {
+               ref.play();
+           }
+
+           else {
+               ref.pause();
+           }
+
+           function Small() {
+               var ref = document.getElementById("MyVideo");
+               ref.width = 300;
+           }
+           function Normal() {
+               var ref = document.getElementById("MyVideo");
+               ref.width = 600;
+           }
+           function Big() {
+               var ref = document.getElementById("MyVideo");
+               ref.width = 800;
+           }
+       }
+</script>
+</body>
+</html>
